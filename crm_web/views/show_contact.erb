@@ -1,0 +1,20 @@
+<ul>
+  <li class='contact'>
+    <h3><%= @contact.full_name %></h3>
+    <ul>
+      <li><%= @contact.email %></li>
+      <li><%= @contact.note %></li>
+    </ul>
+
+    <div class="edit_delete">
+      <a class='contact_update' href='/contacts/<%= @contact.id %>/edit'>Edit</a>
+
+      <form action='/contacts/<%= @contact.id %>' method='post'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Delete'>
+      </form>
+    </div>
+
+
+  </li>
+</ul>

@@ -1,0 +1,886 @@
+  [1m[35m (116.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (136.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20160627010710)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateBooks < ActiveRecord::Migration[4.2] (called from require at bin/rails:4)
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "already_read" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160627010710"]]
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-14 22:09:18.213654"], ["updated_at", "2017-12-14 22:09:18.213654"]]
+  [1m[35m (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "already_read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Secret History"], ["author", "Donna Tartt"], ["already_read", "t"], ["created_at", "2017-12-14 22:09:24.024683"], ["updated_at", "2017-12-14 22:09:24.024683"]]
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "already_read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Why's (Poignant) Guide to Ruby"], ["author", "Why the Lucky Stiff"], ["already_read", "t"], ["created_at", "2017-12-14 22:09:24.133569"], ["updated_at", "2017-12-14 22:09:24.133569"]]
+  [1m[35m (105.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "already_read", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pink Noises"], ["author", "Tara Rodgers"], ["already_read", "f"], ["created_at", "2017-12-14 22:09:24.244414"], ["updated_at", "2017-12-14 22:09:24.244414"]]
+  [1m[35m (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:15:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 992ms (Views: 989.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-12-14 17:15:07 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.0.4) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130749389500 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (75.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (172.8ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:15:10 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.0.4) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130764460460 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.2ms)
+Started GET "/books.text" for 127.0.0.1 at 2017-12-14 17:15:13 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.0.4) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130760605240 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.9ms)
+Started GET "/books.json" for 127.0.0.1 at 2017-12-14 17:15:15 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.0.4) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_47196931341960 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.3ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.4ms)
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:19:06 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-12-14 17:19:07 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (87.9ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `already_read' for #<#<Class:0x00007f912e54be30>:0x00007f912e54abc0>):
+    1: <% @books.each do |book| %>
+    2:   <p><%= book.title %> by <%= book.author %></p>
+    3:   <% if already_read %>
+    4:     <p>You've read this book!</p>
+    5:   <%end  %>
+    6: <% end %>
+  
+app/views/books/index.html.erb:3:in `block in _app_views_books_index_html_erb__2131023917498479242_70130762057460'
+app/views/books/index.html.erb:1:in `_app_views_books_index_html_erb__2131023917498479242_70130762057460'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.0ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130754726860 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.3ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.1ms)
+Started GET "/books" for 127.0.0.1 at 2017-12-14 17:19:16 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:20:52 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-12-14 17:20:53 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 54ms (Views: 45.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:27:08 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-12-14 17:27:10 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 43ms (Views: 34.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/books.text" for 127.0.0.1 at 2017-12-14 17:27:11 -0500
+Processing by BooksController#index as TEXT
+  Rendering books/index.text.erb
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.text.erb (3.0ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:29:10 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:29:14 -0500
+Processing by BooksController#index as CSV
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/books_controller.rb:6:in `index'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130748117240 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.5ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:29:54 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `header' for #<BooksController:0x00007f912ea49450>
+Did you mean?  headers
+               head):
+  
+app/controllers/books_controller.rb:10:in `block (2 levels) in index'
+app/controllers/books_controller.rb:6:in `index'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130756533720 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.1ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (75.8ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:30:41 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 406 Not Acceptable in 47ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#index is missing a template for this request format and variant.
+
+request.formats: ["text/csv"]
+request.variant: []):
+  
+actionpack (5.0.4) lib/action_controller/metal/implicit_render.rb:43:in `default_render'
+actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.4) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.4) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.4) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.4) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.4) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.4) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.4) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/home/james/.rbenv/versions/2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130762720340 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.4ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:34:37 -0500
+Processing by BooksController#index as CSV
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/index, application/index with {:locale=>[:en], :formats=>[:csv], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/james/Desktop/bitmaker/projects/booklist/app/views"
+):
+  
+app/controllers/books_controller.rb:10:in `block (2 levels) in index'
+app/controllers/books_controller.rb:6:in `index'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (27.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (67.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130764182900 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.4ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.6ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:34:47 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/booklist/app/controllers/books_controller.rb:10: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+        {render csv: @books}
+                    ^
+/home/james/Desktop/bitmaker/projects/booklist/app/controllers/books_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/books_controller.rb:10: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/controllers/books_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130753351360 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.0ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:38:14 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 61ms (Views: 44.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:38:25 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:38:34 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-14 17:39:26 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:39:27 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 22ms (Views: 1.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:41:16 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/booklist/app/controllers/books_controller.rb:11: syntax error, unexpected ':', expecting keyword_end
+        layout: true
+               ^
+/home/james/Desktop/bitmaker/projects/booklist/app/controllers/books_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/books_controller.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/controllers/books_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130753250220 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.2ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:41:24 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.7ms)
+
+
+  
+ArgumentError (There was no default layout for BooksController in #<ActionView::PathSet:0x00007f912cedeeb8 @paths=[#<ActionView::OptimizedFileSystemResolver:0x000055d9c8bd4bb8 @pattern=":prefix/:action{.:locale,}{.:formats,}{+:variants,}{.:handlers,}", @cache=#<ActionView::Resolver::Cache:0x55d9c8bd4b68 keys=19 queries=0>, @path="/home/james/Desktop/bitmaker/projects/booklist/app/views">]>):
+  
+app/controllers/books_controller.rb:10:in `block (2 levels) in index'
+app/controllers/books_controller.rb:6:in `index'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.2ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130755992420 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.4ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (81.1ms)
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:42:15 -0500
+Processing by BooksController#index as CSV
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 17:42:20 -0500
+Processing by BooksController#index as CSV
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-14 18:12:03 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books.csv" for 127.0.0.1 at 2017-12-14 18:12:32 -0500
+Processing by BooksController#index as CSV
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 34ms (Views: 1.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/books.json" for 127.0.0.1 at 2017-12-14 18:13:45 -0500
+Processing by BooksController#index as JSON
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/books_controller.rb:12:in `block in index'
+app/controllers/books_controller.rb:6:in `index'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130756089160 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.9ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.2ms)
+Started GET "/books.json" for 127.0.0.1 at 2017-12-14 18:13:57 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/booklist/app/controllers/books_controller.rb:12: syntax error, unexpected ':'
+      format.json: @books
+                  ^):
+  
+app/controllers/books_controller.rb:12: syntax error, unexpected ':'
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.1ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_james__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___2423779496625105956_70130762363360 at /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.5ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (85.2ms)
+Started GET "/books.json" for 127.0.0.1 at 2017-12-14 18:14:28 -0500
+Processing by BooksController#index as JSON
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 1.9ms)
+
+

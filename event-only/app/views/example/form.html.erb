@@ -1,0 +1,28 @@
+<%= form_for @job_application do |form_helper| %>
+
+  <% form_item_array = [:full_name, :phone, :hobby] %>
+
+  <% form_item_array.each do |form_item| %>
+
+    <p>
+      <%= form_helper.label form_item %>
+      <%= form_helper.text_field form_item %>
+    </p>
+
+  <% end %>
+
+  <p>
+    <%= form_helper.label :years_experience %>
+    <%= form_helper.number_field :years_experience %>
+  </p>
+
+  <p>
+    <%= form_helper.label :available_date %>
+    <%= form_helper.date_field :available_date %>
+  </p>
+
+  <p>
+    <%= submit_tag "Apply" %>
+  </p>
+
+<% end %>

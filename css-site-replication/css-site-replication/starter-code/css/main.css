@@ -1,0 +1,144 @@
+/*
+Colors to use:
+dark blue: #06365f
+light blue: #1c5380
+*/
+
+/*BOILERPLATE*/
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/*CONTENT*/
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url(/home/james/Desktop/bitmaker/projects/css-site-replication/css-site-replication/starter-code/images/bgtile.png) repeat-x;
+}
+
+.page {
+  margin: 90px auto 0;
+  width: 880px;
+}
+
+.contentbox {
+  margin: 2em;
+  display: inline-block;
+  float: right;
+}
+
+.frame {
+  background: url(/home/james/Desktop/bitmaker/projects/css-site-replication/css-site-replication/starter-code/images/frame.png) no-repeat;
+  min-width: 504px;
+  min-height: 370px;
+  max-height: 370px;
+  max-width: 504px;
+  overflow: hidden;
+  position: relative;
+  padding: 3em;
+}
+
+.frame p {
+    padding-top: 16px;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+h3, p {
+  margin: 0;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+.button {
+  display: inline-block;
+}
+
+.insta.button {
+  float: left;
+}
+
+.home.button {
+  float: right;
+  margin-top: 2em;
+  border: 1px solid #0C2C61;
+  padding: 8px;
+  margin-right: 3em;
+  padding-top: 10px;
+  border-radius: 5px;
+}
+
+p.login {
+    display: inline-block;
+    margin: 5px;
+    font-weight: 900;
+    color: #fff;
+}
+
+h3 {
+  color: #06365f;
+}
+
+.apps {
+    text-align: left;
+    margin: 1em;
+    position: absolute;
+    bottom: 0;
+    margin-left: 0;
+}
+
+.app.button {
+    padding: 1em;
+}
+
+img.house {
+    float: left;
+}
+
+/*FOOTER*/
+
+ul.footer {
+  list-style: none;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding: 1em;
+  font-size: 1.2em;
+  color: #888;
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+  color: #1c5380;
+}

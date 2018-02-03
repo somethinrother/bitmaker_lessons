@@ -1,0 +1,20 @@
+<%= link_to "Return to index", root_path %>
+
+<% form_item_array = [:word, :definition, :language] %>
+
+<%= form_for entry do |form_helper| %>
+
+  <% form_item_array.each do |form_item| %>
+
+    <p>
+      <%= form_helper.label form_item %>:
+      <%= form_helper.text_field form_item %>
+    </p>
+
+  <% end %>
+
+  <p>
+    <%= form_helper.submit "Submit" %>
+  </p>
+
+<% end %>

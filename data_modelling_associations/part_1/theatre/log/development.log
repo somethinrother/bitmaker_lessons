@@ -1,0 +1,53 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (115.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (139.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDirectors (20171127212132)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "directors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "style" varchar, "attitude" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127212132"]]
+  [1m[35m (85.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlays (20171127212223)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "plays" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "director_id" integer, "title" varchar, "author" varchar, "genre" varchar, "year_written" integer, "script" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127212223"]]
+  [1m[35m (121.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20171127212324)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "play_id" integer, "name" varchar, "number_of_scenes" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127212324"]]
+  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActors (20171127212352)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "play_id" integer, "name" varchar, "email" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127212352"]]
+  [1m[35m (134.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-27 21:24:26.940043"], ["updated_at", "2017-11-27 21:24:26.940043"]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "directors" ("name", "style", "attitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Doug Gloops"], ["style", "Fierce"], ["attitude", "Saucy"], ["created_at", "2017-11-27 21:36:07.277023"], ["updated_at", "2017-11-27 21:36:07.277023"]]
+  [1m[35m (111.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDirector Load (0.8ms)[0m  [1m[34mSELECT  "directors".* FROM "directors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDirector Load (0.4ms)[0m  [1m[34mSELECT  "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "plays" ("director_id", "title", "author", "genre", "year_written", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["director_id", 1], ["title", "Hamlet"], ["author", "William Shakespeare"], ["genre", "Tragedy"], ["year_written", 1600], ["created_at", "2017-11-27 21:37:49.007780"], ["updated_at", "2017-11-27 21:37:49.007780"]]
+  [1m[35m (126.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDirector Load (0.8ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  [1m[36mPlay Load (0.7ms)[0m  [1m[34mSELECT  "plays".* FROM "plays" WHERE "plays"."director_id" = ? LIMIT ?[0m  [["director_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlay Load (0.8ms)[0m  [1m[34mSELECT  "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "roles" ("play_id", "name", "number_of_scenes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["play_id", 1], ["name", "Hamlet"], ["number_of_scenes", 15], ["created_at", "2017-11-27 21:50:06.064559"], ["updated_at", "2017-11-27 21:50:06.064559"]]
+  [1m[35m (104.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlay Load (0.3ms)[0m  [1m[34mSELECT  "plays".* FROM "plays" WHERE "plays"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "actors" ("play_id", "name", "email", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["play_id", 1], ["name", "Jeff Dooper"], ["email", "jdooper@dooper.net"], ["age", 34], ["created_at", "2017-11-27 21:51:14.204777"], ["updated_at", "2017-11-27 21:51:14.204777"]]
+  [1m[35m (103.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPlay Load (0.7ms)[0m  [1m[34mSELECT "plays".* FROM "plays"[0m
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."play_id" = ? LIMIT ?[0m  [["play_id", 1], ["LIMIT", 11]]
+  [1m[36mPlay Load (0.4ms)[0m  [1m[34mSELECT "plays".* FROM "plays"[0m
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT  "actors".* FROM "actors" WHERE "actors"."play_id" = ? LIMIT ?[0m  [["play_id", 1], ["LIMIT", 11]]

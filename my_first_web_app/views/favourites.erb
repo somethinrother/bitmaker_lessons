@@ -1,0 +1,10 @@
+<h1>My Favourite Websites</h1>
+
+<p>Check out these sick links (sinks)</p>
+
+<h2>The Links</h2>
+<ul>
+  <% @fav_links.each do |title, link| %>
+    <li> - <a href="<%= link %>"> <%= title %> </a></li>
+  <% end %>
+</ul>

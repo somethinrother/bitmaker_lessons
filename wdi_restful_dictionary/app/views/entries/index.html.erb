@@ -1,0 +1,13 @@
+<h1>Music Dictionary</h1>
+
+<h3><%= link_to "Add a New Word", new_entry_path %></h3>
+
+--------------------
+
+<h3>Index</h3>
+
+<% Entry.all.order(word: :asc).each do |entry| %>
+
+  <p><%= link_to "#{entry.title}", entry_path(entry) %></p>
+
+<% end %>

@@ -1,0 +1,100 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (135.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (148.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMusicPieces (20171129211703)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "music_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "composer" varchar, "date" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129211703"]]
+  [1m[35m (129.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-29 21:17:33.153949"], ["updated_at", "2017-11-29 21:17:33.153949"]]
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "music_pieces" ("name", "composer", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jupiter"], ["composer", "Gustav Holst"], ["date", "May 3rd, 1863"], ["created_at", "2017-11-29 21:18:24.564846"], ["updated_at", "2017-11-29 21:18:24.564846"]]
+  [1m[35m (157.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMusicPiece Load (0.8ms)[0m  [1m[34mSELECT  "music_pieces".* FROM "music_pieces" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInstruments (20171129212053)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "instruments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "material" varchar, "tuning" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129212053"]]
+  [1m[35m (153.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "material", "tuning", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oboe"], ["material", "wood"], ["tuning", "A-D-G-B"], ["created_at", "2017-11-29 21:23:01.363581"], ["updated_at", "2017-11-29 21:23:01.363581"]]
+  [1m[35m (142.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mInstrument Load (0.6ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInstruments (20171129212053)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "instruments"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171129212053"]]
+  [1m[35m (127.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInstruments (20171129212053)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "instruments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "material" varchar, "tuning" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129212053"]]
+  [1m[35m (125.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMusicSheets (20171129212343)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "music_sheets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "music_piece_id" integer, "instrument_id" integer, "clef" varchar, "pages" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129212343"]]
+  [1m[35m (88.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mInstrument Load (2.2ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "material", "tuning", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oboe"], ["material", "wood"], ["tuning", "ADGB"], ["created_at", "2017-11-29 21:27:22.588077"], ["updated_at", "2017-11-29 21:27:22.588077"]]
+  [1m[35m (137.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMusicPiece Load (0.4ms)[0m  [1m[34mSELECT  "music_pieces".* FROM "music_pieces" WHERE "music_pieces"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" WHERE "instruments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "music_sheets" ("music_piece_id", "instrument_id", "clef", "pages", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["music_piece_id", 1], ["instrument_id", 1], ["clef", "bass"], ["pages", 4], ["created_at", "2017-11-29 21:28:30.338342"], ["updated_at", "2017-11-29 21:28:30.338342"]]
+  [1m[35m (136.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMusicSheet Load (0.6ms)[0m  [1m[34mSELECT  "music_sheets".* FROM "music_sheets" ORDER BY "music_sheets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusicSheet Load (0.4ms)[0m  [1m[34mSELECT  "music_sheets".* FROM "music_sheets" ORDER BY "music_sheets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusicSheet Load (0.4ms)[0m  [1m[34mSELECT  "music_sheets".* FROM "music_sheets" ORDER BY "music_sheets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusicPiece Load (0.7ms)[0m  [1m[34mSELECT  "music_pieces".* FROM "music_pieces" ORDER BY "music_pieces"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInstrument Load (0.4ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mInstrument Load (0.6ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  [1m[36mMusicSheet Load (0.5ms)[0m  [1m[34mSELECT  "music_sheets".* FROM "music_sheets" WHERE "music_sheets"."instrument_id" = ? LIMIT ?[0m  [["instrument_id", 1], ["LIMIT", 11]]
+  [1m[36mMusicPiece Load (0.7ms)[0m  [1m[34mSELECT "music_pieces".* FROM "music_pieces"[0m
+  [1m[36mMusicSheet Load (0.5ms)[0m  [1m[34mSELECT  "music_sheets".* FROM "music_sheets" WHERE "music_sheets"."music_piece_id" = ? LIMIT ?[0m  [["music_piece_id", 1], ["LIMIT", 11]]
+  [1m[36mMusicSheet Load (0.6ms)[0m  [1m[34mSELECT "music_sheets".* FROM "music_sheets"[0m
+  [1m[36mInstrument Load (0.4ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" WHERE "instruments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMusicSheet Load (0.3ms)[0m  [1m[34mSELECT "music_sheets".* FROM "music_sheets"[0m
+  [1m[36mInstrument Load (0.4ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" WHERE "instruments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMusicSheet Load (0.4ms)[0m  [1m[34mSELECT "music_sheets".* FROM "music_sheets"[0m
+  [1m[36mMusicPiece Load (0.4ms)[0m  [1m[34mSELECT  "music_pieces".* FROM "music_pieces" WHERE "music_pieces"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to InstrumentMusicPiece (20171129213231)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "instruments_music_pieces" ("instrument_id" integer NOT NULL, "music_piece_id" integer NOT NULL, "instruments" integer, "music_pieces" integer)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129213231"]]
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMusicPiece Load (0.4ms)[0m  [1m[34mSELECT  "music_pieces".* FROM "music_pieces" ORDER BY "music_pieces"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" ORDER BY "instruments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "instruments_music_pieces" ("instrument_id", "music_piece_id") VALUES (?, ?)[0m  [["instrument_id", 1], ["music_piece_id", 1]]
+  [1m[35m (174.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mInstrument Load (0.7ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" INNER JOIN "instruments_music_pieces" ON "instruments"."id" = "instruments_music_pieces"."instrument_id" WHERE "instruments_music_pieces"."music_piece_id" = ? LIMIT ?[0m  [["music_piece_id", 1], ["LIMIT", 11]]

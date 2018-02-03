@@ -1,0 +1,121 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (141.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWorkers (20171128030638)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "wage" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128030638"]]
+  [1m[35m (77.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-28 03:07:36.392624"], ["updated_at", "2017-11-28 03:07:36.392624"]]
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShifts (20171128030834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "shifts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "starting_time" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128030834"]]
+  [1m[35m (140.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "shifts_workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shifts_id" integer, "workers_id" integer)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128031417"]]
+  [1m[35m (113.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "shifts_workers"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171128031417"]]
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "shifts" ("day", "starting_time", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["day", "Tuesday"], ["starting_time", "9am"], ["created_at", "2017-11-28 15:12:59.400537"], ["updated_at", "2017-11-28 15:12:59.400537"]]
+  [1m[35m (123.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWorker Load (4.8ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mShift Load (0.6ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "workers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-29 20:16:44.491997"], ["updated_at", "2017-11-29 20:16:44.491997"]]
+  [1m[35m (104.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "shifts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-29 20:16:57.595680"], ["updated_at", "2017-11-29 20:16:57.595680"]]
+  [1m[35m (122.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShifts (20171128030834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "shifts"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171128030834"]]
+  [1m[35m (101.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShifts (20171128030834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "shifts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "starting_time" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128030834"]]
+  [1m[35m (115.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ShiftsWorkers (20171128031417)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "shifts_workers" ("shift_id" integer NOT NULL, "worker_id" integer NOT NULL, "shifts_id" integer, "workers_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171128031417"]]
+  [1m[35m (85.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWorker Load (2.7ms)[0m  [1m[34mSELECT "workers".* FROM "workers"[0m
+  [1m[36mWorker Load (0.8ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" ORDER BY "workers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWorker Load (0.7ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWorker Load (0.4ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (124.0ms)[0m  [1m[31mDELETE FROM "workers" WHERE "workers"."id" = ?[0m  [["id", 1]]
+  [1m[36mWorker Load (0.4ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" ORDER BY "workers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "workers" ("name", "wage", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dan"], ["wage", 24], ["created_at", "2017-11-29 20:35:32.263430"], ["updated_at", "2017-11-29 20:35:32.263430"]]
+  [1m[35m (111.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mShift Load (0.4ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "shifts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-29 20:35:57.987747"], ["updated_at", "2017-11-29 20:35:57.987747"]]
+  [1m[35m (243.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "shifts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-11-29 20:36:03.435711"], ["updated_at", "2017-11-29 20:36:03.435711"]]
+  [1m[35m (153.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "shifts_workers" ("shift_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shift_id", 1], ["worker_id", 2], ["created_at", "2017-11-29 20:39:00.671078"], ["updated_at", "2017-11-29 20:39:00.671078"]]
+  [1m[35m (114.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWorker Load (1.0ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" INNER JOIN "shifts_workers" ON "workers"."id" = "shifts_workers"."worker_id" WHERE "shifts_workers"."shift_id" = ? LIMIT ?[0m  [["shift_id", 1], ["LIMIT", 11]]
+  [1m[36mShift Load (0.5ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" INNER JOIN "shifts_workers" ON "shifts"."id" = "shifts_workers"."shift_id" WHERE "shifts_workers"."worker_id" = ? LIMIT ?[0m  [["worker_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "shifts_workers" ("shift_id", "worker_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shift_id", 2], ["worker_id", 2], ["created_at", "2017-11-29 20:39:21.183575"], ["updated_at", "2017-11-29 20:39:21.183575"]]
+  [1m[35m (104.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWorker Load (0.5ms)[0m  [1m[34mSELECT  "workers".* FROM "workers" INNER JOIN "shifts_workers" ON "workers"."id" = "shifts_workers"."worker_id" WHERE "shifts_workers"."shift_id" = ? LIMIT ?[0m  [["shift_id", 2], ["LIMIT", 11]]
+  [1m[36mShift Load (0.7ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" INNER JOIN "shifts_workers" ON "shifts"."id" = "shifts_workers"."shift_id" WHERE "shifts_workers"."worker_id" = ? LIMIT ?[0m  [["worker_id", 2], ["LIMIT", 11]]

@@ -1,0 +1,486 @@
+Started GET "/" for 127.0.0.1 at 2017-12-16 17:33:47 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (11.5ms)
+Completed 200 OK in 2151ms (Views: 90.6ms)
+
+
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:36:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pokemon/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:37:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pokemon/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:38:45 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1873ms (Views: 1541.4ms)
+
+
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:41:11 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+at.json { render :json message: "pokemans" }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:4: syntax error, unexpected '}', expecting keyword_end
+er :json message: "pokemans" }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/pokemon_controller.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:41:21 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+at.json { render :json message: "pokemans" }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:4: syntax error, unexpected '}', expecting keyword_end
+er :json message: "pokemans" }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/pokemon_controller.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:41:40 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting '}'
+at.json { render :json message: "pokemans" }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+er :json message: "pokemans" }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:41:45 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting '}'
+at.json { render :json message: "pokemans" }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+er :json message: "pokemans" }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:42:28 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '{', expecting '}'
+  format.json { render :json {message: "pokemans"} }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+er :json {message: "pokemans"} }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '{', expecting '}'
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:42:29 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '{', expecting '}'
+  format.json { render :json {message: "pokemans"} }
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+er :json {message: "pokemans"} }
+                              ^):
+  
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '{', expecting '}'
+app/controllers/pokemon_controller.rb:6: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 17:43:52 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 43.2ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:43:57 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:44:12 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:44:13 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:54:45 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:13: syntax error, unexpected tIDENTIFIER, expecting '}'
+        name:  "#{name}"
+            ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+        types: "#{types}"
+              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:15: syntax error, unexpected '}', expecting keyword_end
+        }
+         ^):
+  
+app/controllers/pokemon_controller.rb:13: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/pokemon_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+app/controllers/pokemon_controller.rb:15: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:54:52 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1425ms (Views: 0.4ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:56:19 -0500
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:12: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+        puts id:    "#{id}",
+                ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:12: syntax error, unexpected ',', expecting '}'
+        puts id:    "#{id}",
+                            ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:14: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+        puts types: "#{types}"
+                   ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/controllers/pokemon_controller.rb:15: syntax error, unexpected '}', expecting keyword_end
+        }
+         ^):
+  
+app/controllers/pokemon_controller.rb:12: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/controllers/pokemon_controller.rb:12: syntax error, unexpected ',', expecting '}'
+app/controllers/pokemon_controller.rb:14: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/controllers/pokemon_controller.rb:15: syntax error, unexpected '}', expecting keyword_end
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:57:38 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1258ms (Views: 0.6ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:57:54 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1916ms
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/pokemon_controller.rb:14:in `[]'
+app/controllers/pokemon_controller.rb:14:in `block (2 levels) in show'
+app/controllers/pokemon_controller.rb:9:in `show'
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 17:58:11 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2127ms (Views: 0.6ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:01:42 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1429ms (Views: 0.6ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:02:11 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1571ms (Views: 0.8ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:02:39 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1166ms (Views: 0.8ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:02:42 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1296ms (Views: 0.4ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:36:55 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1589ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:13:in `show'
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:37:20 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1914ms (Views: 0.6ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:38:40 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1555ms (Views: 0.4ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:52:54 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1692ms
+
+
+  
+NameError (uninitialized constant PokemonController::GIPHY_KEY):
+  
+app/controllers/pokemon_controller.rb:10:in `show'
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:53:35 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1924ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:13:in `show'
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:54:15 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1717ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:13:in `show'
+Started PUT "/__web_console/repl_sessions/69a69b1c4f16c4c957b110a08a083e08" for 127.0.0.1 at 2017-12-16 18:54:24 -0500
+Started PUT "/__web_console/repl_sessions/69a69b1c4f16c4c957b110a08a083e08" for 127.0.0.1 at 2017-12-16 18:54:27 -0500
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:55:30 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1689ms (Views: 0.6ms)
+
+
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:58:05 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1798ms
+
+
+  
+NameError (undefined local variable or method `id' for #<PokemonController:0x000055628b4ed200>
+Did you mean?  @id):
+  
+app/controllers/pokemon_controller.rb:18:in `block (2 levels) in show'
+app/controllers/pokemon_controller.rb:15:in `show'
+Started GET "/pokemon/1.json" for 127.0.0.1 at 2017-12-16 18:58:28 -0500
+Processing by PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2014ms (Views: 0.4ms)
+
+
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 18:58:34 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2394ms (Views: 483.5ms)
+
+
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 18:58:54 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1512ms (Views: 28.6ms)
+
+
+Started GET "/pokemon/1" for 127.0.0.1 at 2017-12-16 19:00:01 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 1511ms
+
+
+  
+SyntaxError (/home/james/Desktop/bitmaker/projects/pokegifs/app/views/pokemon/show.html.erb:3: syntax error, unexpected '>'
+put_buffer.safe_append=' ") %>
+                              ^
+/home/james/Desktop/bitmaker/projects/pokegifs/app/views/pokemon/show.html.erb:4: unterminated string meets end of file):
+  
+app/views/pokemon/show.html.erb:3: syntax error, unexpected '>'
+app/views/pokemon/show.html.erb:4: unterminated string meets end of file
+Started PUT "/__web_console/repl_sessions/f6d22d04b4056e80b1af47a4243ad650" for 127.0.0.1 at 2017-12-16 19:00:13 -0500
+Started PUT "/__web_console/repl_sessions/f6d22d04b4056e80b1af47a4243ad650" for 127.0.0.1 at 2017-12-16 19:00:16 -0500
+Started PUT "/__web_console/repl_sessions/f6d22d04b4056e80b1af47a4243ad650" for 127.0.0.1 at 2017-12-16 19:00:18 -0500
+Started PUT "/__web_console/repl_sessions/f6d22d04b4056e80b1af47a4243ad650" for 127.0.0.1 at 2017-12-16 19:00:33 -0500
+Started GET "/" for 127.0.0.1 at 2017-12-16 19:04:31 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/james/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 10ms (Views: 6.5ms)
+
+
+Started GET "/pokemon/" for 127.0.0.1 at 2017-12-16 19:04:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/pokemon"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pokemon/2" for 127.0.0.1 at 2017-12-16 19:04:44 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 2121ms
+
+
+  
+ActionView::Template::Error (undefined method `capitalize' for nil:NilClass):
+    1: <h1>Welcome to <%= @name.capitalize %>'s Page' </h1>
+  
+app/views/pokemon/show.html.erb:1:in `_app_views_pokemon_show_html_erb___2069243607565892104_69987001611060'
+Started GET "/pokemon/2" for 127.0.0.1 at 2017-12-16 19:05:34 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1748ms (Views: 45.2ms)
+
+
+Started GET "/pokemon/366" for 127.0.0.1 at 2017-12-16 19:05:39 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"366"}
+Completed 500 Internal Server Error in 1137ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:7:in `show'
+Started GET "/pokemon/100" for 127.0.0.1 at 2017-12-16 19:05:48 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"100"}
+Completed 500 Internal Server Error in 1109ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:7:in `show'
+Started GET "/pokemon/99" for 127.0.0.1 at 2017-12-16 19:05:53 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"99"}
+Completed 500 Internal Server Error in 1531ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:7:in `show'
+Started GET "/pokemon/6" for 127.0.0.1 at 2017-12-16 19:05:58 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1536ms (Views: 31.3ms)
+
+
+Started GET "/pokemon/17" for 127.0.0.1 at 2017-12-16 19:06:03 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"17"}
+  Rendering pokemon/show.html.erb within layouts/application
+  Rendered pokemon/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1494ms (Views: 29.6ms)
+
+
+Started GET "/pokemon/23" for 127.0.0.1 at 2017-12-16 19:06:07 -0500
+Processing by PokemonController#show as HTML
+  Parameters: {"id"=>"23"}
+Completed 500 Internal Server Error in 1514ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/pokemon_controller.rb:7:in `show'

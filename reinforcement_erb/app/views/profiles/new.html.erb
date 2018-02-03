@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <!-- This would normally be an iteration through a class's fields, rather than an array I make -->
+    <% fields_array = %w[email username pin website address alias] %>
+
+    <% fields_array.each do |field| %>
+      <p>
+        <label for="<%= field %>"><%= field %></label>
+        <input type="text" name="<%= field %>" id="<%= field %>" class="fancy_form" >
+      </p>
+    <% end %>
+
+  </body>
+</html>

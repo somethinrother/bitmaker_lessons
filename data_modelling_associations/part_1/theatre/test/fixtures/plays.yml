@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  director_id: 1
+  title: MyString
+  author: MyString
+  genre: MyString
+  year_written: 1
+  script: MyText
+
+two:
+  director_id: 1
+  title: MyString
+  author: MyString
+  genre: MyString
+  year_written: 1
+  script: MyText

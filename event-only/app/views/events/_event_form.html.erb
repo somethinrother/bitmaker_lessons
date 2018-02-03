@@ -1,0 +1,18 @@
+<% form_item_array = [:name, :date, :capacity, :city] %>
+
+<%= form_for event do |form_helper| %>
+
+  <% form_item_array.each do |form_item| %>
+
+    <p>
+      <%= form_helper.label form_item %>:
+      <%= form_helper.text_field form_item %>
+    </p>
+
+  <% end %>
+
+  <p>
+    <%= submit_tag "Submit" %>
+  </p>
+
+<% end %>

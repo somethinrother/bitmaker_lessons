@@ -1,0 +1,17 @@
+<h1>Hi, I'm James!</h1>
+
+<p>I'm pretty rad, and enjoy food, as many humans do.</p>
+
+<h2>Skills</h2>
+<ul>
+  <% @skills.each do |skill| %>
+    <li> - <%= skill %> </li>
+  <% end %>
+</ul>
+
+<h2>Interests</h2>
+<ul>
+  <% @interests.each do |interest| %>
+    <li> - <%= interest %> </li>
+  <% end %>
+</ul>

@@ -1,0 +1,103 @@
+1 - Find the author with the name 'Kara Melton' and then select all
+the articles she has written.
+
+SELECT * FROM authors
+WHERE name='Kara Melton';
+
+SELECT * FROM articles
+WHERE author_id = 8;
+
+2 - Find Ontario in the provinces table and then find all the cities
+in that province.
+
+SELECT * FROM provinces
+WHERE name='Ontario';
+
+SELECT * FROM cities
+WHERE province_id='14';
+
+
+3 - Who wrote the article called 'Coding Bootcamps and Emotional
+Labor'?
+
+SELECT * FROM articles
+WHERE title='Coding Bootcamps and Emotional Labor';
+
+SELECT * FROM authors
+WHERE id=4;
+
+4 - Write a series of SQL queries to find out how many provinces
+are in Canada.
+
+SELECT COUNT(name)
+FROM provinces
+WHERE country_id=1;
+
+5- How many people live at 4740 McDermott Street?
+
+SELECT * FROM residences
+WHERE address='4740 McDermott Street';
+
+SELECT COUNT(name)
+FROM persons
+WHERE residence_id=9;
+
+6 - What city is 4740 McDermott Street in?
+
+SELECT * FROM residences
+WHERE address='4740 McDermott Street';
+
+SELECT * FROM cities
+WHERE id=11;
+
+7 - What province is 4740 McDermott Street in?
+
+SELECT * FROM residences
+WHERE address='4740 McDermott Street';
+
+SELECT * FROM cities
+WHERE id=11;
+
+SELECT * FROM provinces
+WHERE id=14;
+
+8 - What country is 4740 McDermott Street in?
+
+SELECT * FROM residences
+WHERE address='4740 McDermott Street';
+
+SELECT * FROM cities
+WHERE id=11;
+
+SELECT * FROM provinces
+WHERE id=14;
+
+SELECT * FROM countries
+WHERE id=1;
+
+9 - Find the person named 'Destini Davis' and then use a
+series of SQL queries to find what country they live in.
+
+SELECT * FROM persons
+WHERE name='Destini Davis';
+
+SELECT * FROM residences
+WHERE id=2;
+
+SELECT * FROM cities
+WHERE id=8;
+
+SELECT * FROM provinces
+WHERE id=14;
+
+SELECT * FROM countries
+WHERE id=1;
+
+10 - How many articles has Aditya Mukerjee written?
+
+SELECT * FROM authors
+where name='Aditya Mukerjee';
+
+SELECT COUNT(title)
+FROM articles
+WHERE author_id=2;

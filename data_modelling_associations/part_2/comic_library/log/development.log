@@ -1,0 +1,122 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (115.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (116.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComics (20171129204607)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "genre" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129204607"]]
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-29 20:46:37.669978"], ["updated_at", "2017-11-29 20:46:37.669978"]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIssues (20171129205206)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "issues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "comic_id" integer, "name" varchar, "date" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129205206"]]
+  [1m[35m (141.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "comics" ("name", "genre", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Amazing Spider-Man"], ["genre", "Action"], ["created_at", "2017-11-29 20:54:20.481509"], ["updated_at", "2017-11-29 20:54:20.481509"]]
+  [1m[35m (141.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComic Load (0.6ms)[0m  [1m[34mSELECT  "comics".* FROM "comics" WHERE "comics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "issues" ("comic_id", "name", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["comic_id", 1], ["name", "Issue 1"], ["date", "March 3rd, 1976"], ["created_at", "2017-11-29 20:55:12.436413"], ["updated_at", "2017-11-29 20:55:12.436413"]]
+  [1m[35m (105.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mComic Load (0.8ms)[0m  [1m[34mSELECT "comics".* FROM "comics"[0m
+  [1m[36mIssue Load (0.5ms)[0m  [1m[34mSELECT  "issues".* FROM "issues" WHERE "issues"."comic_id" = ? LIMIT ?[0m  [["comic_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArtists (20171129205642)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "artists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129205642"]]
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Frank Gruber"], ["age", 46], ["email", "fgruber@gmail.com"], ["created_at", "2017-11-29 20:57:48.942525"], ["updated_at", "2017-11-29 20:57:48.942525"]]
+  [1m[35m (128.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ArtistComic (20171129205913)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "artists_comics" ("artist_id" integer, "comic_id" integer)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129205913"]]
+  [1m[35m (118.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mComic Load (4.4ms)[0m  [1m[34mSELECT  "comics".* FROM "comics" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mComic Load (0.7ms)[0m  [1m[34mSELECT "comics".* FROM "comics"[0m
+  [1m[36mIssue Load (0.4ms)[0m  [1m[34mSELECT  "issues".* FROM "issues" WHERE "issues"."comic_id" = ? LIMIT ?[0m  [["comic_id", 1], ["LIMIT", 11]]
+  [1m[36mComic Load (0.4ms)[0m  [1m[34mSELECT "comics".* FROM "comics"[0m
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "artists_comics" ("artist_id", "comic_id") VALUES (?, ?)[0m  [["artist_id", 1], ["comic_id", 1]]
+  [1m[35m (83.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mComic Load (2.6ms)[0m  [1m[34mSELECT  "comics".* FROM "comics" INNER JOIN "artists_comics" ON "comics"."id" = "artists_comics"."comic_id" WHERE "artists_comics"."artist_id" = ? LIMIT ?[0m  [["artist_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWriters (20171129210513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "writers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129210513"]]
+  [1m[35m (129.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "writers" ("name", "age", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stan Lee"], ["age", 89], ["email", "stan@marvel.com"], ["created_at", "2017-11-29 21:06:24.194005"], ["updated_at", "2017-11-29 21:06:24.194005"]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ComicWriter (20171129210841)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "comics_writers" ("comic_id" integer, "writer_id" integer)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129210841"]]
+  [1m[35m (113.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWriter Load (2.5ms)[0m  [1m[34mSELECT  "writers".* FROM "writers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWriter Load (0.7ms)[0m  [1m[34mSELECT "writers".* FROM "writers"[0m
+  [1m[36mComic Load (0.4ms)[0m  [1m[34mSELECT "comics".* FROM "comics"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comics_writers" ("comic_id", "writer_id") VALUES (?, ?)[0m  [["comic_id", 1], ["writer_id", 1]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mComic Load (0.6ms)[0m  [1m[34mSELECT  "comics".* FROM "comics" INNER JOIN "comics_writers" ON "comics"."id" = "comics_writers"."comic_id" WHERE "comics_writers"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 11]]
+  [1m[36mComic Load (0.4ms)[0m  [1m[34mSELECT  "comics".* FROM "comics" INNER JOIN "comics_writers" ON "comics"."id" = "comics_writers"."comic_id" WHERE "comics_writers"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 11]]
+  [1m[36mWriter Load (0.7ms)[0m  [1m[34mSELECT  "writers".* FROM "writers" INNER JOIN "comics_writers" ON "writers"."id" = "comics_writers"."writer_id" WHERE "comics_writers"."comic_id" = ? LIMIT ?[0m  [["comic_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ArtistWriter (20171129211233)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "artists_writers" ("artist_id" integer, "writer_id" integer)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129211233"]]
+  [1m[35m (106.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWriter Load (0.3ms)[0m  [1m[34mSELECT  "writers".* FROM "writers" ORDER BY "writers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "artists_writers" ("artist_id", "writer_id") VALUES (?, ?)[0m  [["artist_id", 1], ["writer_id", 1]]
+  [1m[35m (123.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWriter Load (0.7ms)[0m  [1m[34mSELECT  "writers".* FROM "writers" INNER JOIN "artists_writers" ON "writers"."id" = "artists_writers"."writer_id" WHERE "artists_writers"."artist_id" = ? LIMIT ?[0m  [["artist_id", 1], ["LIMIT", 11]]
+  [1m[36mWriter Load (0.4ms)[0m  [1m[34mSELECT  "writers".* FROM "writers" INNER JOIN "artists_writers" ON "writers"."id" = "artists_writers"."writer_id" WHERE "artists_writers"."artist_id" = ? LIMIT ?[0m  [["artist_id", 1], ["LIMIT", 11]]
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "artists_writers" ON "artists"."id" = "artists_writers"."artist_id" WHERE "artists_writers"."writer_id" = ? LIMIT ?[0m  [["writer_id", 1], ["LIMIT", 11]]

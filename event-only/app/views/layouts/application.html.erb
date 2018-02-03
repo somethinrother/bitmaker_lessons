@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventOnly</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h3>
+        <a href="<%= root_path %>">
+          <span class="title event">Event</span><span class="title only">Only</span>
+        </a>
+      </h3>
+    </header>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (131.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (154.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCountries (20171127203636)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year_founded" integer, "national_animal" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127203636"]]
+  [1m[35m (81.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProvinces (20171127203725)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "provinces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country_id" integer, "name" varchar, "year_founded" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127203725"]]
+  [1m[35m (152.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCities (20171127204141)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "province_id" integer, "name" varchar, "population" integer, "year_founded" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127204141"]]
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateResidences (20171127204214)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "residences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "city_id" integer, "address" varchar, "year_built" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127204214"]]
+  [1m[35m (112.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePeople (20171127204241)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "residence_id" integer, "name" varchar, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171127204241"]]
+  [1m[35m (121.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-27 20:43:29.134079"], ["updated_at", "2017-11-27 20:43:29.134079"]]
+  [1m[35m (169.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "countries" ("name", "year_founded", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Canada"], ["year_founded", 1867], ["created_at", "2017-11-27 20:49:58.445632"], ["updated_at", "2017-11-27 20:49:58.445632"]]
+  [1m[35m (108.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[35mSQL (115.8ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 1]]
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "countries" ("name", "year_founded", "national_animal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Canada"], ["year_founded", 1867], ["national_animal", "Moose"], ["created_at", "2017-11-27 20:51:55.160519"], ["updated_at", "2017-11-27 20:51:55.160519"]]
+  [1m[35m (109.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "provinces" ("name", "year_founded", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ontario"], ["year_founded", 1867], ["created_at", "2017-11-27 20:55:04.924938"], ["updated_at", "2017-11-27 20:55:04.924938"]]
+  [1m[35m (124.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mProvince Load (0.6ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  [1m[36mProvince Load (1.4ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[33mUPDATE "provinces" SET "country_id" = ?, "updated_at" = ? WHERE "provinces"."id" = ?[0m  [["country_id", 2], ["updated_at", "2017-11-27 20:58:38.281615"], ["id", 1]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProvince Load (0.8ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" WHERE "provinces"."country_id" = ? LIMIT ?[0m  [["country_id", 2], ["LIMIT", 11]]
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mProvince Load (0.4ms)[0m  [1m[34mSELECT  "provinces".* FROM "provinces" WHERE "provinces"."country_id" = ? LIMIT ?[0m  [["country_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "population", "year_founded", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Toronto"], ["population", 2800000], ["year_founded", 1793], ["created_at", "2017-11-27 21:05:35.112744"], ["updated_at", "2017-11-27 21:05:35.112744"]]
+  [1m[35m (112.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProvince Load (0.5ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  [1m[36mProvince Load (0.3ms)[0m  [1m[34mSELECT "provinces".* FROM "provinces"[0m
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "cities" SET "province_id" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["province_id", 1], ["updated_at", "2017-11-27 21:06:52.055497"], ["id", 1]]
+  [1m[35m (83.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCity Load (0.9ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."province_id" = ? LIMIT ?[0m  [["province_id", 1], ["LIMIT", 11]]
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "residences" ("city_id", "address", "year_built", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["city_id", 1], ["address", "45 Epsom Avenue"], ["year_built", 1987], ["created_at", "2017-11-27 21:11:18.157872"], ["updated_at", "2017-11-27 21:11:18.157872"]]
+  [1m[35m (126.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."city_id" = ? LIMIT ?[0m  [["city_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mResidence Load (0.5ms)[0m  [1m[34mSELECT  "residences".* FROM "residences" WHERE "residences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "people" ("residence_id", "name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["residence_id", 1], ["name", "James"], ["age", 29], ["created_at", "2017-11-27 21:13:21.460517"], ["updated_at", "2017-11-27 21:13:21.460517"]]
+  [1m[35m (109.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mResidence Load (0.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences"[0m
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."residence_id" = ? LIMIT ?[0m  [["residence_id", 1], ["LIMIT", 11]]

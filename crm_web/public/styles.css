@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing:border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    background-color: #363636;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: .75em;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    padding: 12px;
+    padding-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #d2d2d2;
+    margin: .2em;
+    padding: 0.4em;
+    font-weight: 900;
+    color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 8px;
+}
+
+.contact_counter {
+    background-color: #acacac;
+    margin: .5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    font-weight: 300;
+}
+
+.counter_number {
+    font-weight: 900;
+    border-bottom: #00ead0;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.contact {
+    background-color: #363636;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+ul {
+    list-style: none;
+    margin: .4em;
+}
+
+.edit_delete {
+    margin: .2em;
+    padding: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #bfbfbf;
+}
+
+form {
+  display: inline;
+  padding-left: 18px;
+}
+
+footer {
+    font-size: .7em;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    padding: 1em;
+}

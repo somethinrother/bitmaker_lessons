@@ -1,0 +1,27 @@
+<h1>Pictures</h1>
+
+<% @all_years.each do |year| %>
+  <% if year == @all_years[-1] %>
+    <%= link_to("Pictures from #{year}", "pictures/index/#{year}") %>
+  <% else %>
+    <%= link_to("Pictures from #{year}", "pictures/index/#{year}") %> |
+  <% end %>
+<% end %>
+
+<br>
+
+<%= link_to("New Picture", "/pictures/new") %>
+
+<h3>Our Most Recent Images</h3>
+
+<% @new_pictures.each do |picture| %>
+  <p><%= picture.title %>, <%= picture.artist %></p>
+  <%= link_to(image_tag(picture.url), "pictures/#{picture.id}") %>
+<% end %>
+
+<h3>Our Older Images</h3>
+
+<% @old_pictures.each do |picture| %>
+  <p><%= picture.title %>, <%= picture.artist %></p>
+  <%= link_to(image_tag(picture.url), "pictures/#{picture.id}") %>
+<% end %>

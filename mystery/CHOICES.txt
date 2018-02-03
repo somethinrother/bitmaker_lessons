@@ -1,0 +1,19 @@
+CHOICES
+
+First Choice: pb & j
+Second Choice: get to work
+Third Choice: helga & doctor
+Fourth Choice: listen in
+<<<<<<< HEAD
+Fifth Choice: Accuse Helga
+Sixth Choice: approach billy * Helga had a pipe
+Seventh Choice: listen in
+Eighth Choice: accuse Billy
+=======
+Fifth Choice: approach billy * Helga had a pipe
+Sixth Choice: listen in
+Seventh Choice: approach Danny * Billy makes excuses
+Eighth Choice: accuse danny
+>>>>>>> choice_8_attempt_1
+Ninth Choice: ____
+Tenth Choice: ____
